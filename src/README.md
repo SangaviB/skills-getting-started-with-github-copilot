@@ -48,3 +48,18 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Frontend / Static Preview
+
+The project includes a small static frontend in `src/static` demonstrating the activities UI. After running the backend (see above), open http://localhost:8000 to view the redesigned kid-friendly page. Files changed during the redesign:
+
+- `src/static/index.html` — new hero, activity cards, and layout
+- `src/static/styles.css` — colorful, responsive styles for kids
+- `src/static/app.js` — renders cartoon SVGs, enroll buttons, and improved interactivity
+
+If you prefer a quick preview without the backend, you can serve `src/static` using Python's simple HTTP server (from within the `src/static` directory):
+
+```bash
+python -m http.server 8001
+# then open http://localhost:8001 in your browser
+```

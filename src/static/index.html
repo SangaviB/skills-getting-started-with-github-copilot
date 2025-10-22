@@ -7,22 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
+    <header class="site-header">
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Mergington High School</h1>
+          <p class="tagline">Fun, creative, and friendly extracurriculars that kids love 🎨🤖⚽🎵</p>
+          <a href="#activities" class="cta" aria-label="See available activities">See Activities</a>
+        </div>
+        <div class="hero-illustration" aria-hidden="true">
+          <!-- simple decorative SVG cloud and sun -->
+          <svg width="220" height="140" viewBox="0 0 220 140" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffd54f" />
+                <stop offset="100%" stop-color="#ffb74d" />
+              </linearGradient>
+            </defs>
+            <circle cx="40" cy="40" r="24" fill="url(#g)" />
+            <g fill="#81d4fa" opacity="0.9">
+              <ellipse cx="150" cy="90" rx="46" ry="26" />
+              <ellipse cx="110" cy="80" rx="60" ry="30" />
+            </g>
+          </svg>
+        </div>
+      </div>
     </header>
 
     <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
+      <section id="activities" class="activities-section">
+        <h2>Available Classes & Activities</h2>
+        <p class="lead">Choose from exciting hands-on clubs and classes — each card shows a playful cartoon to spark imagination.</p>
+        <div id="activities-list" class="activities-grid">
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>
         </div>
       </section>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
+      <aside id="signup-container" class="signup-aside">
+        <h2>Sign Up</h2>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,15 +57,35 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" class="primary">Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
-      </section>
+      </aside>
     </main>
 
     <footer>
       <p>&copy; 2023 Mergington High School</p>
     </footer>
+
+    <!-- Details modal -->
+    <div id="details-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" aria-label="Close details" data-close>&times;</button>
+        <div class="modal-content">
+          <div class="modal-illustration" id="modal-illustration" aria-hidden="true"></div>
+          <div class="modal-info">
+            <h3 id="modal-title">Class Title</h3>
+            <p id="modal-description">Class description will appear here.</p>
+            <p id="modal-schedule" class="meta"></p>
+            <div class="modal-actions">
+              <button id="modal-enroll" class="btn enroll">Enroll</button>
+              <button id="modal-close-btn" class="btn details" data-close>Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
